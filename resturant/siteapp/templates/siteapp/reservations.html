@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Nigerian Kitchen - Contact Page</title>
+        <title>Nigerian Kitchen - Reservation Page</title>
 
         <!-- CSS FILES -->        
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,9 +82,7 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                     <div class="row">
 
                         <div class="col-lg-10 col-12 mx-auto">
-                            <h1 class="text-white">Say Hi</h1>
-
-                            <strong class="text-white">We are happy to get in touch with you</strong>
+                            <h1 class="text-white">Book a table</h1>
                         </div>
 
                     </div>
@@ -97,77 +95,62 @@ https://www.tooplate.com/view/2129-crispy-kitchen
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-12">
-                            <h2 class="mb-4">Leave a message</h2>
-                        </div>
+                                    <div class="col-12">
+                                        <h3 class="mb-4">Reserve a table</h3>
+                                    </div>
 
-                        <div class="col-lg-6 col-12">
-                            <form class="custom-form contact-form row" action="" method="post" role="form">
-                                {% csrf_token %}
-                                <div class="col-lg-6 col-6">
-                                    <label for="contact-name" class="form-label">Full Name</label>
+                                    <div class="col-lg-6 col-12">
+                                        <form class="custom-form contact-form row" action="" method="post" role="form">
+                                            {% csrf_token %}
+                                            <div class="col-lg-6 col-12">
+                                                <label for="name" class="form-label">Full Name</label>
+                                                {{form.name}}
+                                            </div>
 
-                                    {% comment %} <input type="text" name="contact-name" id="contact-name" class="form-control" placeholder="Your Name" required> {% endcomment %}
-                                    {{form.fullname}}
-                                </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label for="email" class="form-label">Email Address</label>
 
-                                <div class="col-lg-6 col-6">
-                                    <label for="contact-phone" class="form-label">Phone Number</label>
+                                                {{form.email_add}}
+                                            </div>
 
-                                    {% comment %} <input type="telephone" name="contact-phone" id="contact-phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="123-456-7890"> {% endcomment %}
-                                    {{form.phone}}
-                                </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label for="phone" class="form-label">Phone Number</label>
 
-                                <div class="col-12">
-                                    <label for="contact-email" class="form-label">Email</label>
+                                                {{form.phone}}
+                                            </div>
 
-                                    {% comment %} <input type="email" name="contact-email" id="contact-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Your Email" required=""> {% endcomment %}
-                                    {{form.email_add}}
-                                    <label for="contact-message" class="form-label">Message</label>
+                                            <div class="col-lg-6 col-12">
+                                                <label for="people" class="form-label">Number of persons</label>
 
-                                    {% comment %} <textarea class="form-control" rows="5" id="contact-message" name="contact-message" placeholder="Your Message"></textarea> {% endcomment %}
-                                    {{form.message}}
-                                </div>
+                                                {{form.no_of_persons}}
+                                            </div>
 
-                                <div class="col-lg-5 col-12 ms-auto">
-                                    <button type="submit" class="form-control">Send</button>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- Modal Structure -->
-                        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Submission Successful</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                Your complaint has been successfully submitted. We will get back to you soon!
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label for="date" class="form-label">Date</label>
+
+                                                {{form.date_reserved}}
+                                            </div>
+
+                                            <div class="col-lg-6 col-12">
+                                                <label for="time" class="form-label">Time</label>
+
+                                                {{form.time_reserved}}
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label for="message" class="form-label">Special Request</label>
+
+                                                {{form.special_requests}}
+                                            </div>
+
+                                            <div class="col-lg-4 col-12 ms-auto">
+                                                <button type="submit" class="form-control">Submit Request</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                        
                         <div class="col-lg-4 col-12 mx-auto mt-lg-5 mt-4">
-
-                            <h5>Weekdays</h5>
-
-                            <div class="d-flex mb-lg-3">
-                                <p>Monday to Friday</p>
-
-                                <p class="ms-5">10:00 AM - 08:00 PM</p>
-                            </div>
-
-                            <h5>Weekends</h5>
-
-                            <div class="d-flex">
-                                <p>Saturday and Sunday</p>
-
-                                <p class="ms-5">11:00 AM - 11:00 PM</p>
-                            </div>
+                            <img class='img-fluid' src="{% static 'siteapp/images/restuarant-ambiance.jpg' %}">
                         </div>
 
                         <div class="col-12">

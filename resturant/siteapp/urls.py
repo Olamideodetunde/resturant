@@ -7,4 +7,5 @@ urlpatterns = [
     path('menu/',views.menu,name='menu-page'),
     path('news-detail/<slug:slug>',views.single_news,name='news-detail'),
     path('contact/',views.contact,name='contact-page'),
+    path('reservations/',views.reservation,name='reservation-page'),
 ]

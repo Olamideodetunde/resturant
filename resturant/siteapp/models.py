@@ -9,7 +9,12 @@ class Contact(models.Model):
     def __str__(self) :
      return f'{self.fullname}  {self.phone}'
 class Menu(models.Model):
+    class FoodTypeChoices(models.TextChoices):
+        BREAKFAST='breakfast'
+        LUNCH='lunch'
+        DINNER='dinner'
     food_name= models.CharField(max_length=100)
+    food_type= models.CharField(max_length=100,null=True,choices=FoodTypeChoices.choices)
     food_price =models.FloatField(max_length=10)
     food_image=models.ImageField(max_length=200,upload_to='foods/')
     rating=models.IntegerField()
